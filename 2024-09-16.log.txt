@@ -1,0 +1,9 @@
+[2024-09-16 00:15:28] [WARNING]-Failed to determine the https port for redirect.
+[2024-09-16 00:15:28] [INFORMATION]-Hello World!
+[2024-09-16 00:15:28] [CRITICAL]-Hello World!
+[2024-09-16 00:17:04] [INFORMATION]-Application is shutting down...
+[2024-09-16 22:23:44] [INFORMATION]-Now listening on: http://localhost:5274
+[2024-09-16 22:23:44] [INFORMATION]-Application started. Press Ctrl+C to shut down.
+[2024-09-16 22:23:44] [INFORMATION]-Hosting environment: Development
+[2024-09-16 22:23:44] [INFORMATION]-Content root path: D:\Project\Logger\web
+[2024-09-16 22:24:16] [INFORMATION]-Application is shutting down...

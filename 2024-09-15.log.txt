@@ -1,0 +1,24 @@
+[2024-09-15 21:25:42] [INFORMATION]-Now listening on: https://localhost:7011
+[2024-09-15 21:26:11] [INFORMATION]-Now listening on: http://localhost:5274
+[2024-09-15 21:26:13] [INFORMATION]-Application started. Press Ctrl+C to shut down.
+[2024-09-15 21:26:18] [INFORMATION]-Hosting environment: Development
+[2024-09-15 21:26:18] [INFORMATION]-Content root path: D:\Project\Logger\web
+[2024-09-15 21:26:18] [INFORMATION]-Hello World!
+[2024-09-15 21:26:42] [INFORMATION]-Hello World!
+[2024-09-15 21:26:42] [INFORMATION]-Hello World!
+[2024-09-15 21:26:43] [INFORMATION]-Hello World!
+[2024-09-15 21:34:08] [INFORMATION]-Now listening on: http://localhost:5274
+[2024-09-15 21:34:08] [INFORMATION]-Application started. Press Ctrl+C to shut down.
+[2024-09-15 21:34:08] [INFORMATION]-Hosting environment: Development
+[2024-09-15 21:34:08] [INFORMATION]-Content root path: D:\Project\Logger\web
+[2024-09-15 21:34:36] [INFORMATION]-Application is shutting down...
+[2024-09-15 21:57:17] [INFORMATION]-Now listening on: http://localhost:5274
+[2024-09-15 21:57:17] [INFORMATION]-Application started. Press Ctrl+C to shut down.
+[2024-09-15 21:57:17] [INFORMATION]-Hosting environment: Development
+[2024-09-15 21:57:17] [INFORMATION]-Content root path: D:\Project\Logger\web
+[2024-09-15 21:57:24] [INFORMATION]-Application is shutting down...
+[2024-09-15 21:58:43] [INFORMATION]-Now listening on: http://localhost:5274
+[2024-09-15 21:58:43] [INFORMATION]-Application started. Press Ctrl+C to shut down.
+[2024-09-15 21:58:43] [INFORMATION]-Hosting environment: Development
+[2024-09-15 21:58:43] [INFORMATION]-Content root path: D:\Project\Logger\web
+[2024-09-15 22:00:34] [INFORMATION]-Application is shutting down...
