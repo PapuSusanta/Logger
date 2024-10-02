@@ -13,8 +13,6 @@ This is a custom logging utility designed to provide a flexible and efficient wa
 ### Basic Example
 
 ```csharp
-using web.Logging;
-
 // Create a new logger instance with the specified name
 var logger = new FileLogger(configuration, category => true);
 
