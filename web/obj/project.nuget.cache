@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "ZQNTDdosn8A=",
+  "dgSpecHash": "pvePukRmteQ=",
   "success": true,
-  "projectFilePath": "D:\\Project\\Logger\\web\\web.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/Users/susantamaji/Documents/Projects/Logger/web/web.csproj",
+  "expectedPackageFiles": [
+    "/Users/susantamaji/.nuget/packages/microsoft.netcore.app.ref/8.0.21/microsoft.netcore.app.ref.8.0.21.nupkg.sha512",
+    "/Users/susantamaji/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.21/microsoft.aspnetcore.app.ref.8.0.21.nupkg.sha512",
+    "/Users/susantamaji/.nuget/packages/microsoft.netcore.app.host.osx-arm64/8.0.21/microsoft.netcore.app.host.osx-arm64.8.0.21.nupkg.sha512"
+  ],
   "logs": []
 }

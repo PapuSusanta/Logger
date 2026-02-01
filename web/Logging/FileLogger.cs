@@ -6,7 +6,6 @@ partial class FileLogger : ILogger
 {
     private readonly string _logPath;
     private readonly LogLevel logLevel;
-    private readonly IConfiguration _configuration;
     private readonly Func<string, bool> _filter;
     public readonly string _categoryName;
 
@@ -18,8 +17,7 @@ partial class FileLogger : ILogger
     {
         _logPath = configuration["Logging:File:LogPath"]!;
         string logLevelStr = configuration["Logging:LogLevel:Default"]!;
-        Enum.TryParse<LogLevel>(logLevelStr, out logLevel);
-        _configuration = configuration;
+        _ = Enum.TryParse<LogLevel>(logLevelStr, out logLevel);
         _filter = filter;
         _categoryName = categoryName;
 

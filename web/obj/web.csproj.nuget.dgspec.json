@@ -1,28 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project\\Logger\\web\\web.csproj": {}
+    "/Users/susantamaji/Documents/Projects/Logger/web/web.csproj": {}
   },
   "projects": {
-    "D:\\Project\\Logger\\web\\web.csproj": {
+    "/Users/susantamaji/Documents/Projects/Logger/web/web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project\\Logger\\web\\web.csproj",
+        "projectUniqueName": "/Users/susantamaji/Documents/Projects/Logger/web/web.csproj",
         "projectName": "web",
-        "projectPath": "D:\\Project\\Logger\\web\\web.csproj",
-        "packagesPath": "C:\\Users\\papum\\.nuget\\packages\\",
-        "outputPath": "D:\\Project\\Logger\\web\\obj\\",
+        "projectPath": "/Users/susantamaji/Documents/Projects/Logger/web/web.csproj",
+        "packagesPath": "/Users/susantamaji/.nuget/packages/",
+        "outputPath": "/Users/susantamaji/Documents/Projects/Logger/web/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\papum\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/susantamaji/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,7 +37,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -56,6 +54,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.21, 8.0.21]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "version": "[8.0.21, 8.0.21]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.21, 8.0.21]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -64,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
