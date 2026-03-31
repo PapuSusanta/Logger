@@ -4,18 +4,14 @@ namespace web.Logging;
 
 partial class FileLogger : ILogger
 {
-    private readonly string _logPath;
     private readonly LogLevel logLevel;
     private readonly Func<string, bool> _filter;
     public readonly string _categoryName;
 
-    public string CurrentPath { get; private set; } = string.Empty;
-
-    private SemaphoreSlim semaphore = new(1, 1);
+    private readonly SemaphoreSlim semaphore = new(1, 1);
 
     public FileLogger(IConfiguration configuration, Func<string, bool> filter, string categoryName)
     {
-        _logPath = configuration["Logging:File:LogPath"]!;
         string logLevelStr = configuration["Logging:LogLevel:Default"]!;
         _ = Enum.TryParse<LogLevel>(logLevelStr, out logLevel);
         _filter = filter;
@@ -38,12 +34,8 @@ partial class FileLogger : ILogger
         return _filter(_categoryName);
     }
 
-    public async void Log<TState>(
-        LogLevel logLevel,
-        EventId eventId,
-        TState state,
-        Exception? exception,
-        Func<TState, Exception?, string> formatter)
+    public void Log<TState>(LogLevel logLevel, EventId eventId, TState state,
+        Exception? exception, Func<TState, Exception?, string> formatter)
     {
         if (!IsEnabled(logLevel))
         {
@@ -61,8 +53,10 @@ partial class FileLogger : ILogger
         try
         {
             await semaphore.WaitAsync();
+
+            var currentPath = LogFileCreate();
             var currentDate = $"{DateTime.Now:yyyy-MM-dd}";
-            var fileName = Path.GetFileNameWithoutExtension(CurrentPath);
+            var fileName = Path.GetFileNameWithoutExtension(currentPath);
             var parts = fileName.Split(".");
 
             if (parts[0] != currentDate)
@@ -71,12 +65,13 @@ partial class FileLogger : ILogger
             }
 
             using var stream = new FileStream(
-                CurrentPath,
+                currentPath,
                 FileMode.Append,
                 FileAccess.Write,
                 FileShare.None,
                 bufferSize: 4096,
                 useAsync: true);
+
             await stream.WriteAsync(Encoding.UTF8.GetBytes(message));
 
         }
@@ -86,15 +81,14 @@ partial class FileLogger : ILogger
         }
     }
 
-    private void LogFileCreate()
+    private static string LogFileCreate()
     {
-        string directory = Path.GetDirectoryName(_logPath)!;
+        var path = Path.Combine(Directory.GetCurrentDirectory(), "logs");
         string fileName = $"{DateTime.Now:yyyy-MM-dd}.log.txt";
-        var logPath = Path.Combine(directory, fileName);
-        if (!Directory.Exists(directory))
+        if (!Directory.Exists(path))
         {
-            Directory.CreateDirectory(directory);
+            Directory.CreateDirectory(path);
         }
-        CurrentPath = logPath;
+        return Path.Combine(path, fileName);
     }
 }

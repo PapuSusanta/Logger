@@ -3,11 +3,9 @@ using web;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
-
 builder.Services.AddLoggerExtension(builder.Configuration);
 
 var app = builder.Build();
-
 
 app.UseHttpsRedirection();
 
@@ -19,4 +17,4 @@ app.MapGet("/", (ILogger<Program> logger) =>
     return "Hello World!";
 });
 
-app.Run();
+await app.RunAsync();
