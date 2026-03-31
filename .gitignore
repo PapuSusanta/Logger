@@ -4,4 +4,4 @@ bin
 *.log.txt
 .vs
 .vscode
-,Ds_Store
+.Ds_Store
