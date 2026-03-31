@@ -1,3 +1,6 @@
+using System.Diagnostics;
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
 using web;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,12 +12,11 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 
-app.MapGet("/", (ILogger<Program> logger) =>
+app.UseMiddleware<GlobalExceptionMiddleware>();
+
+app.MapGet("/", () =>
 {
-    logger.LogInformation("Hello World!");
-    logger.LogTrace("Hello World!");
-    logger.LogCritical("Hello World!");
-    return "Hello World!";
+    throw new Exception("An error occurred while processing the request.");
 });
 
 await app.RunAsync();
