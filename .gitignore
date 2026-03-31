@@ -2,3 +2,6 @@ obj
 bin
 *.log
 *.log.txt
+.vs
+.vscode
+,Ds_Store
