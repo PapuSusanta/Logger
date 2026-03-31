@@ -53,7 +53,7 @@ partial class FileLogger : ILogger
 
         message = $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] [{logLevel.ToString().ToUpper()}]-{message}{Environment.NewLine}";
 
-        await WriteLogToFile(message);
+        WriteLogToFile(message).GetAwaiter().GetResult();
     }
 
     private async Task WriteLogToFile(string message)
