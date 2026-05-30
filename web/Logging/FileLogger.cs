@@ -4,18 +4,18 @@ namespace web.Logging;
 
 partial class FileLogger : ILogger
 {
-    private readonly LogLevel logLevel;
+    private readonly LogLevel _logLevel;
     private readonly Func<string, bool> _filter;
-    public readonly string _categoryName;
+    public readonly string CategoryName;
 
-    private readonly SemaphoreSlim semaphore = new(1, 1);
+    private readonly SemaphoreSlim _semaphore = new(1, 1);
 
     public FileLogger(IConfiguration configuration, Func<string, bool> filter, string categoryName)
     {
         string logLevelStr = configuration["Logging:LogLevel:Default"]!;
-        _ = Enum.TryParse<LogLevel>(logLevelStr, out logLevel);
+        _ = Enum.TryParse<LogLevel>(logLevelStr, out _logLevel);
         _filter = filter;
-        _categoryName = categoryName;
+        CategoryName = categoryName;
 
         LogFileCreate();
     }
@@ -27,11 +27,11 @@ partial class FileLogger : ILogger
 
     public bool IsEnabled(LogLevel logLevel)
     {
-        if (logLevel < this.logLevel)
+        if (logLevel < this._logLevel)
         {
             return false;
         }
-        return _filter(_categoryName);
+        return _filter(CategoryName);
     }
 
     public void Log<TState>(LogLevel logLevel, EventId eventId, TState state,
@@ -52,7 +52,7 @@ partial class FileLogger : ILogger
     {
         try
         {
-            await semaphore.WaitAsync();
+            await _semaphore.WaitAsync();
 
             var currentPath = LogFileCreate();
             var currentDate = $"{DateTime.Now:yyyy-MM-dd}";
@@ -77,7 +77,7 @@ partial class FileLogger : ILogger
         }
         finally
         {
-            semaphore.Release();
+            _semaphore.Release();
         }
     }
 
